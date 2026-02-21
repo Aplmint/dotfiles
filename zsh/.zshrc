@@ -42,3 +42,6 @@ eval "$(starship init zsh)"
 
 # zoxide
 eval "$(zoxide init zsh --cmd z)"
+
+# wsl
+# eval "$(/usr/bin/wsl2-ssh-agent)"

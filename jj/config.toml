@@ -1,0 +1,12 @@
+#:schema https://docs.jj-vcs.dev/latest/config-schema.json
+
+[user]
+name = "Aplmint"
+email = "prism2048@outlook.com"
+
+[git]
+fetch = "upstream"
+push = "origin"
+
+[ui]
+default-command = ["log", "--reversed"]

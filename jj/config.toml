@@ -5,8 +5,9 @@ name = "Aplmint"
 email = "prism2048@outlook.com"
 
 [git]
-fetch = "upstream"
-push = "origin"
+private-commits = "empty()"
+# fetch = "upstream"
+# push = "origin"
 
 [ui]
-default-command = ["log", "--reversed"]
+default-command = ["log", "--limit", "7"]

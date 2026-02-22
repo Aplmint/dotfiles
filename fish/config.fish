@@ -1,5 +1,9 @@
-source ./alias.fish
 set -g fish_key_bindings fish_vi_key_bindings
+
+set -U fish_greeting
+
+source ~/.config/fish/alias.fish
+
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
@@ -15,3 +19,5 @@ function yy
 end
 
 starship init fish | source
+
+# test -f /home/xlings/.xlings_data/xlings-profile.fish; and source /home/xlings/.xlings_data/xlings-profile.fish

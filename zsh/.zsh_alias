@@ -30,3 +30,9 @@ alias astronvim="NVIM_APPNAME=astronvim nvim"
 # niri
 source ~/.config/niri/zsh_completion
 
+# sdcv
+function sc() {
+	sdcv -n --utf8-output --color "$@" 2>&1 | \
+	fold --width=$(tput cols) | \
+	less --quit-if-one-screen -RX
+}

@@ -11,3 +11,22 @@ private-commits = "empty()"
 
 [ui]
 default-command = ["log", "--limit", "7"]
+
+[merge-tools.vimdiff]
+merge-args = [
+  "-f",
+  "-d",
+  "$output",
+  "-M",
+  "$left",
+  "$base",
+  "$right",
+  "-c",
+  "wincmd J",
+  "-c",
+  "set modifiable",
+  "-c",
+  "set write"
+]
+program = "nvim"
+merge-tool-edits-conflict-markers = true

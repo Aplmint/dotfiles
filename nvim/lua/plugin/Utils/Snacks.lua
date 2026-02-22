@@ -66,7 +66,7 @@ return {
         -- neovim_ascii_section(logo, "big"),
         {
           section = "terminal",
-          cmd = "chafa ~/Pictures/neovim-mark.png --format symbols --symbols vhalf --size 24x15 --stretch ;sleep .1",
+          cmd = "chafa ~/Pictures/neovim-mark.png --format symbols --symbols vhalf --size 24x15 --stretch  ;sleep .1", --
           height = 15,
           indent = 18,
         },

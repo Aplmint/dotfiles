@@ -9,17 +9,38 @@ local function is_bilibili_url(path)
 	return path and (path:match('bilibili%.com') or path:match('^bv') or path:match('^BV'))
 end
 
+-- 检查操作系统
+local function check_os()
+	local path_separator = package.config:sub(1, 1)
+	if path_separator == '/' then
+		return 'Linux'
+	else
+		return 'Windows'
+	end
+end
+
+-- 确定临时文件目录
+local function get_tmp_dir()
+	local sys = check_os()
+	if sys == 'Linux' then
+		return os.getenv('TMPDIR') or '/tmp'
+	else
+		return os.getenv('TEMP') or os.getenv('TMP') or 'C:\\Windows\\Temp'
+	end
+end
+
 -- 调用 yt-dlp 获取弹幕并转换为 ASS
 local function fetch_danmaku()
 	local url = mp.get_property('path')
 	if not is_bilibili_url(url) then
 		return
 	end
-	local bv = url:gsub('^https://www.bilibili.com/video/', '')
+	-- local bv = url:gsub('^https://www.bilibili.com/video/', '')
+	local bv = 'bilibili'
 	msg.info('检测到 B 站视频，尝试获取弹幕...')
 
 	-- 生成临时文件名
-	local tmp_dir = os.getenv('TMPDIR') or '/tmp'
+	local tmp_dir = get_tmp_dir()
 	local xml = bv .. '.danmaku.xml'
 	local ass = bv .. '.ass'
 	local danmaku_path = utils.join_path(tmp_dir, bv)

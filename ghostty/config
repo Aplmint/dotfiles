@@ -1,7 +1,8 @@
 config-file = ./keybind
-theme = catppuccin-mocha
+theme = Catppuccin Mocha
 
 font-family = "JetBrainsMono Nerd Font Mono"
+font-family = "Maple Mono NF CN"
 # font-family-bold = "ComicMonoNF"
 # font-family-italic = "MonaspiceRn Nerd Font Mono"
 # font-family-bold-italic = "MonaspiceRn Nerd Font Mono"
@@ -18,7 +19,13 @@ font-codepoint-map = U+4E00-U+9FFF,U+3400-U+4DBF=Maple Mono NF CN
 cursor-opacity = 0.5
 cursor-style = bar
 
-background-opacity = 0.7
+background-opacity = 0.75
 window-decoration = none
 #window-padding-x = 30
 #window-padding-y = 30
+
+# single instance
+gtk-single-instance = true
+
+custom-shader = ./shaders/cursor_smear_rainbow.glsl
+

@@ -85,6 +85,6 @@ require("lazy").setup({
     require("plugin.Other.rust"),
   },
   git = {
-    url_format = "ssh://git@github.com/%s.git",
+    url_format = "git@github.com:%s.git",
   },
 })

@@ -1,0 +1,42 @@
+environment {
+    QT_QPA_PLATFORM "wayland;xcb"
+	SDL_VIDEODRIVER "wayland,x11"
+    // DISPLAY ":1"
+	// Eletron applications
+	// So much error
+	// ELECTRON_OZONE_PLATFORM_HINT "auto"
+
+	LANG "zh_CN.UTF-8"
+	LANGUAGE "zh_CN:en_US"
+	
+	// XCURSOR_SIZE 24
+	QT_QPA_PLATFORMTHEME "qt6ct" 
+	XIM "fcitx"
+	XIM_PROGRAM "fcitx"
+	INPUT_METHOD "fcitx"
+	// QT_IM_MODULE "wayland;fcitx;ibus"
+	//// QT_IM_MODULE "fcitx"
+	// GTK_IM_MODULE "wayland;fcitx"
+	//// GTK_IM_MODULE "fcitx"
+	SDL_IM_MODULE "fcitx"
+	XMODIFIERS "@im=fcitx"
+	XDG_SESSION_DESKTOP "niri"
+	
+	// GPU
+	// nvidia 
+	__NV_PRIME_RENDER_OFFLOAD "1"
+	__GLX_VENDOR_LIBRARY_NAME "nvidia"
+	GBM_BACKEND "nvidia-drm"
+	// nvidia VA-API
+	// LIBVA_DRIVER_NAME "nvidia"
+	NVD_BACKEND "direct"
+	// nvidia VDPAU
+	VDPAU_DRIVER "nvidia"
+	// AMD VA-API
+	LIBVA_DRIVER_NAME "radeonsi"
+	// DRM device
+	// WLR_DRM_DEVICES "/dev/dri/by-path/pci-0000:01:00.0-card"
+
+	// Other
+	TERMINAL "kitty"
+}

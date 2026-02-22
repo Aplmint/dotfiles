@@ -11,6 +11,9 @@ private-commits = "empty()"
 
 [ui]
 default-command = ["log", "--limit", "7"]
+editor = "nvim"
+diff-editor = "vimdiff"
+merge-editor = "vimdiff"
 
 [merge-tools.vimdiff]
 merge-args = [

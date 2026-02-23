@@ -84,4 +84,7 @@ require("lazy").setup({
     -- rust crate
     require("plugin.Other.rust"),
   },
+  git = {
+    url_format = "ssh://git@github.com/%s.git",
+  },
 })

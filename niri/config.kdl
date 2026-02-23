@@ -362,6 +362,8 @@ animations {
 // Work around WezTerm's initial configure bug
 // by setting an empty default-column-width.
 
+// Example: enable rounded corners for all windows.
+// (This example rule is commented out with a "/-" in front.)
 window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
@@ -396,11 +398,9 @@ window-rule {
     // block-out-from "screencast"
 }
 
-// Example: enable rounded corners for all windows.
-// (This example rule is commented out with a "/-" in front.)
-/-window-rule {
-    geometry-corner-radius 12
-    clip-to-geometry true
+window-rule {
+	match app-id=r#"wechat"#
+	open-focused false// fix unfocus problem
 }
 
 binds {

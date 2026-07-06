@@ -31,20 +31,20 @@ prepend_preloaders = [
   { mime = "image/svg+xml", run = "magick" },
   { mime = "application/pdf", run = "noop" },
   # { mime = "video/*", run = "noop" },
-  { name = "/media/**", run = "noop" },
+  { url = "/media/**", run = "noop" },
 ]
 prepend_previewers = [
   { mime = "image/svg+xml", run = "magick" },
   { mime = "application/pdf", run = "noop" },
-  { name = "/media/**", run = "noop" },
+  { url = "/media/**", run = "noop" },
 ]
 
-[[plugin.prepend_fetchers]]
-id = "git"
-name = "*"
-run = "git"
-
-[[plugin.prepend_fetchers]]
-id = "git"
-name = "*/"
-run = "git"
+# [[plugin.prepend_fetchers]]
+# id = "git"
+# name = "*"
+# run = "git"
+#
+# [[plugin.prepend_fetchers]]
+# id = "git"
+# name = "*/"
+# run = "git"

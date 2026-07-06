@@ -59,6 +59,9 @@ compinit
 # alias
 source ~/.zsh_alias
 
+# environment variable
+source ~/.zsh_env
+
 eval "$(starship init zsh)"
 
 ## [Completion]

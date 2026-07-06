@@ -4,11 +4,13 @@ include "option.kdl"
 include "window.kdl"
 include "keybind.kdl"
 
-spawn-at-startup "swww-daemon"
-spawn-at-startup "swww" "img" "/home/Atom/Pictures/Wallpapers/arch-black-4k.png"
+spawn-at-startup "awww-daemon"
+spawn-at-startup "awww" "img" "/home/Atom/Pictures/Wallpapers/arch-black-4k.png"
 spawn-at-startup "fcitx5" "-d"
 spawn-at-startup "imfile" "&"
 spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
+spawn-at-startup "qs" "-c" "noctalia-shell"
+
 
 debug {
 	honor-xdg-activation-with-invalid-serial

@@ -23,7 +23,7 @@ export STARSHIP_CONFIG=~/.config/starship/starship.toml
 # PATH
 typeset -U path PATH
 path=(~/.local/bin $path)
-# path=(~/.local/share/bob/nvim-bin $path)
+path=(~/.local/share/bob/nvim-bin $path)
 path=(~/.cargo/bin $path)
 path=(~/fvm/default/bin $path)
 export PATH
@@ -36,3 +36,6 @@ export MANPAGER='nvim +Man!'
 
 # stardict console version
 export STARDICT_DATA_DIR="$XDG_DATA_HOME"
+
+# huggingface 
+export HF_ENDPOINT=https://hf-mirror.com

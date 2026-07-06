@@ -17,12 +17,20 @@ binds {
     Mod+Return { spawn "kitty" "--single-instance"; }
     Mod+Shift+Return { spawn "ghostty" "+new-window"; }
     Mod+Alt+Return { spawn "alacritty"; }
-    Mod+Space { spawn "fuzzel"; }
-    // Mod+P { spawn "hyprlock"; }
-	Mod+V { spawn "bash" "-c" "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy";  }
+    Mod+Space hotkey-overlay-title="Application Launcher" { spawn "fuzzel"; }
+    Mod+P hotkey-overlay-title="Lock Screen" {
+        spawn "dms" "ipc" "call" "lock" "lock";
+    }
+	Mod+V hotkey-overlay-title="Clipboard Manager" { spawn "bash" "-c" "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy";  }
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
     // Mod+T { spawn "bash" "-c" "notify-send hello && exec alacritty"; }
+	Mod+T hotkey-overlay-title="Task Manager" {
+        spawn "dms" "ipc" "call" "processlist" "focusOrToggle";
+    }
+	Mod+N hotkey-overlay-title="Notification Center" {
+        spawn "dms" "ipc" "call" "notifications" "toggle";
+    }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
@@ -31,8 +39,15 @@ binds {
     XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
 
-	XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "-damdgpu_bl1" "set" "+5%"; }
-	XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "-damdgpu_bl1" "set" "5%-"; }
+	// Brightness Controls
+    XF86MonBrightnessUp allow-when-locked=true {
+       spawn "dms" "ipc" "call" "brightness" "increment" "5" "";
+    }
+    XF86MonBrightnessDown allow-when-locked=true {
+       spawn "dms" "ipc" "call" "brightness" "decrement" "5" "";
+    }
+	// XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "-damdgpu_bl1" "set" "+5%"; }
+	// XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "-damdgpu_bl1" "set" "5%-"; }
 
 
     Mod+Q { close-window; }

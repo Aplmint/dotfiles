@@ -2,6 +2,27 @@
 window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
+	background-effect {
+		blur true
+	}
+}
+
+layer-rule {
+    match namespace="^launcher$"
+
+    background-effect {
+		xray false
+        blur true
+    }
+}
+
+layer-rule {
+    match namespace="^noctalia-bar-content-*"
+
+    background-effect {
+		xray false
+        blur true
+    }
 }
 
 window-rule {
@@ -38,3 +59,13 @@ window-rule {
 	open-focused false// fix unfocus problem
 }
 
+window-rule {
+    match is-active=false
+    opacity 0.9
+}
+
+// Open DMS windows as floating by default
+window-rule {
+    match app-id=r#"org.quickshell$"#
+    open-floating true
+}
